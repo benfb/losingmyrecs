@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Losing My Recs</title>
+  <style>
+    p {
+      font-size: 50px;
+      color: white;
+    }
+
+    a {
+      font-size: 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    #band {
+      padding-top: 10%;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="band">
+    <p id="bandName">Loading band...</p>
+    <br>
+    <a href="" onclick="setBand();setRandomBackground();return false;">Get another</a>
+  </div>
+</body>
+
+<script type="text/javascript">
+  function randFromArray(arr) {
+    return arr[Math.floor(Math.random() * arr.length)]
+  }
+
+  var colors = ['#B19CD9', '#966FD6', '#5d8aa8', '#e52b50', '#a4c639', '#ff9966', '#a1caf1', '#0095b6', '#AEC6CF', '#03C03C'];
+  function setRandomBackground() {
+    document.body.style.background = randFromArray(colors);
+  }
+
+  var bands = ["Can", "Suicide", "Captain Beefheart", "Daft Punk", "Larry Levan", "The Peech Boys", "The Modern Lovers", "This Heat", "Pere Ubu", "Outsiders", "Nation of Ulysses", "Mars", "The Trojans", "The Black Dice", "Todd Terry", "The Germs", "Section 25", "Althea and Donna", "Sexual Harassment", "a-ha", "Dorothy Ashby", "PIL", "Fania All-Stars", "The Bar-Kays", "The Human League", "The Normal", "Lou Reed", "Scott Walker", "Monks", "Niagra", "Joy Division", "Lower 48", "The Creation", "Sun Ra", "Scientists", "Royal Trux", "10cc", "Rammellzee", "Eric B. and Rakim", "Index", "Basic Channel", "Soulsonic Force", "Juan Atkins", "Manuel Gottsching", "David Axelrod", "Electric Prunes", "Gil Scott Heron", "The Slits", "Faust", "Mantronix", "Pharaoh Sanders", "The Fire Engines", "The Swans", "The Soft Cell", "The Sonics"];
+  function setBand() {
+    document.getElementById("bandName").innerText = randFromArray(bands)
+  }
+
+  window.onload = (function () { setRandomBackground(); setBand(); });
+</script>
+
+</html>
